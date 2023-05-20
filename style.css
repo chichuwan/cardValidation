@@ -1,0 +1,238 @@
+* {
+    font-family: 'poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.container { 
+    min-height: 100vh;
+    background: url("imgs/wlpr.jpg") no-repeat, center, fixed ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    padding-bottom: 60px;
+}
+
+.container .form {
+    background: rgba(47, 79, 79, 0.98);
+    border-radius: 5px;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+    border: 3px solid rgb(147, 255, 208);
+    padding: 20px;
+    width: 600px;
+    height: 565px;
+    padding-top: 160px;
+}
+
+.container .form .inputBox {
+    margin-top: 25px;
+}
+
+.container .form .inputBox span {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    color: rgb(147, 255, 208);
+    padding-bottom: 1px;
+}
+
+.container .form .inputBox input,
+.container .form .inputBox select {
+    width: 60%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.3);
+    color: rgb(6, 255, 6);
+    background-color: black;
+    display: block;
+    margin: auto;
+}
+
+::placeholder {
+    color: rgba(0, 118, 0, 0.599);
+}
+
+.container foreignObject .flexbox {
+    display: flex;
+    gap: 35px;
+}
+
+
+
+.container .form .submitBtn, .closeBtn, .closeBtn2, .closeBtn3 {
+    width: 100%;
+    background: linear-gradient(45deg, rgb(30, 173, 173)
+    ,rgb(0, 255, 174));
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+.container .form .submitBtn:hover, .closeBtn:hover, .closeBtn2:hover, .closeBtn3:hover {
+    letter-spacing: 2px;
+    opacity: 0.8;
+}
+
+.container .cardContainer {
+    margin-bottom: -150px;
+    position: relative;
+    height: 250px;
+    width: 400px;
+}
+
+.container .cardContainer .front {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(45deg, rgb(30, 173, 173)
+    ,rgb(0, 255, 174));
+    border-radius: 15px;
+    backface-visibility: hidden;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+    padding: 20px;
+    transform: perspective(1000px) rotateY(0deg);
+    transition: transform .4s ease-out;
+}
+
+.container .cardContainer .front .image {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10;
+}
+
+.container .cardContainer .front .image .img {
+    height: 50px;
+}
+
+.container .cardContainer .front .cardNumberBox {
+    padding: 30px 0;
+    font-size: 22px;
+    color: white;
+}
+
+.container .cardContainer .front .flexbox {
+    display: flex;
+}
+
+.container .cardContainer .front .flexbox .box:nth-child(1) {
+    margin-right: auto;
+
+}
+
+.container .cardContainer .front .flexbox .box {
+    font-size: 15px;
+    color: white;
+}
+
+.container .cardContainer .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(45deg, rgb(30, 173, 173)
+    ,rgb(0, 255, 174));
+    border-radius: 15px;
+    padding: 20px 0;
+    text-align: right;
+    backface-visibility: hidden;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+    transform: perspective(1000px) rotateY(180deg);
+    transition: transform .4s ease-out;
+}
+
+.container .cardContainer .back .stripe {
+    background: black;
+    width: 100%;
+    margin: 10px 0;
+    height: 50px;
+}
+
+.container .cardContainer .back .box {
+    padding: 0 20px;
+
+}
+
+.container .cardContainer .back .box span {
+    color: white;
+    font-size: 15px;
+}
+
+.container .cardContainer .back .box .cvvBox {
+    height: 50x;
+    margin-top: 5px;
+    padding: 15px;
+    color: #333;
+    background: white;
+    border-radius: 15px;
+    width: 100%;
+}
+
+.container .cardContainer .back .box img {
+    margin-top: 30px;
+    height: 30px;
+}
+
+.popup, .popup2, .popup3 {
+    width: 700px;
+    background: darkslategray;
+    border: 3px solid rgb(147, 255, 208);
+    border-radius: 6px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #ffffff;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+}
+
+.openPopup {
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.popup img, .popup2 img, .popup3 img {
+    width: 100px;
+    margin-top: -50px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.popup h2, .popup2 h2, .popup3 h2 {
+    font-size: 38px;
+    font-weight: 500;
+    margin: 30px 0 10px;
+}
+
+.popup button, .popup2 button, .popup3 button {
+    width: 100%;
+    margin-top: 50px;
+    padding: 10px 0;
+    background: rgb(147, 255, 208);
+    color: white;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+
+}
+

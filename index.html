@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Credit Card Validator</title>
+</head>
+<body>
+    <div class="container">
+        <div class="cardContainer">
+            <div class="front">
+                <div class="image">
+                    <img src="imgs/chip.png" width="95px" alt="">
+                    <img src="imgs/visa.png" width="110px" alt="">
+                </div>
+                <div class="cardNumberBox">**** **** **** 1234</div>
+                <div class="flexbox">
+                    <div class="box">
+                        <span>Card Holder</span>
+                        <div class="cardHolderName">Full Name</div>
+                    </div>
+                    <div class="box">
+                        <span>Valid Thru</span>
+                        <div class="expiration">
+                            <span class="expDate">mm/yy</span>
+                            <!-- <span class="expYear">yy</span> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="back">
+                <div class="stripe"></div>
+                <div class="box">
+                    <span>cvv</span>
+                    <div class="cvvBox"></div>
+                    <img src="imgs/visa.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="form">
+            <div class="inputBox">
+                <span>Card Number</span>
+                <input type="text" maxlength="19" class="cardNumberInput" placeholder="Card Number" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+            </div>
+            <div class="inputBox">
+                <span>Card Holder</span>
+                <input type="text" class="cardHolderInput" placeholder="Card Holder">
+            </div>
+            <div class="flexbox">
+                <div class="inputBox">
+                    <span>Exp Date</span>
+                    <input type="text" maxlength="5" class="expDateInput" placeholder="Exp Date mm/yy" onkeypress="return event.charCode >=48 && event.charCode <= 57">
+                </div>
+                <div class="inputBox">
+                    <span>cvv</span>
+                    <input type="text" maxlength="3" class="cvvInput" placeholder="CVV" onkeypress="return event.charCode >=48 && event.charCode <= 57">
+                </div>
+            </div>
+
+            <button type="submit" class="submitBtn">SUBMIT</button>
+            <div class="popup" id="popup">
+                <img src="imgs/check.png">
+                <h2>Awesome!</h2>
+                <p>Your credit card is valid</p>
+                <button type="button" class="closeBtn">OK</button>
+            </div>
+            <div class="popup2" id="popup">
+                <img src="imgs/xmark.jpg">
+                <h2>Bad News</h2>
+                <p>Sorry, your credit card is invalid</p>
+                <button type="button" class="closeBtn2">OK</button>
+            </div>
+            <div class="popup3" id="popup">
+                <img src="imgs/xmark.jpg">
+                <h2>Error!</h2>
+                <p>Please fill in all the needed information about your card</p>
+                <button type="button" class="closeBtn3">OK</button>
+            </div>
+        </div>
+
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
